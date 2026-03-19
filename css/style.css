@@ -1008,6 +1008,7 @@ textarea:focus-visible {
   display: flex;
   align-items: center;
   gap: 1rem;
+  transition: transform 180ms ease, opacity 180ms ease;
 }
 
 .footer-contact-item__icon {
@@ -1019,6 +1020,10 @@ textarea:focus-visible {
   background: var(--color-primary);
   color: #ffffff;
   flex: 0 0 auto;
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    box-shadow 180ms ease;
 }
 
 .footer-contact-item__icon svg {
@@ -1038,6 +1043,10 @@ textarea:focus-visible {
 .footer-contact-item a,
 .footer-contact-item p {
   color: rgba(255, 255, 255, 0.88);
+}
+
+.footer-contact-item a {
+  transition: color 180ms ease, opacity 180ms ease;
 }
 
 .footer-main {
@@ -1122,10 +1131,41 @@ textarea:focus-visible {
   border-radius: 999px;
   background: var(--color-primary);
   content: "";
+  transition: transform 180ms ease, background-color 180ms ease;
 }
 
 .footer-links a {
   color: rgba(255, 255, 255, 0.88);
+  transition: color 180ms ease, transform 180ms ease, opacity 180ms ease;
+}
+
+.footer-contact-item:hover,
+.footer-contact-item:focus-within {
+  transform: translateY(-0.12rem);
+}
+
+.footer-contact-item:hover .footer-contact-item__icon,
+.footer-contact-item:focus-within .footer-contact-item__icon {
+  background: #9af15f;
+  box-shadow: 0 16px 30px rgba(135, 227, 74, 0.18);
+  transform: translateY(-0.08rem);
+}
+
+.footer-contact-item:hover a,
+.footer-contact-item:focus-within a {
+  color: #ffffff;
+}
+
+.footer-links a:hover,
+.footer-links a:focus-visible {
+  color: #ffffff;
+  transform: translateX(0.22rem);
+}
+
+.footer-links li:hover::before,
+.footer-links li:focus-within::before {
+  background: #ffffff;
+  transform: scale(1.15);
 }
 
 .footer-meta {
@@ -1141,6 +1181,13 @@ textarea:focus-visible {
   margin-top: 1.4rem;
   font-size: 0.92rem;
   color: rgba(255, 255, 255, 0.72);
+}
+
+.footer-operator {
+  margin-top: 0.7rem;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.62);
 }
 
 .cookie-banner {
